@@ -1,0 +1,69 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "title": "Eight Queens",
+      "difficulty": "Medium",
+      "description": "Place 8 queens on a chessboard so that no queen attacks another. A classic constraint satisfaction problem.",
+      "icon": "👑",
+      "timeLimit": 600,
+      "minScore": 0,
+      "maxScore": 1000,
+      "color": "#FF6B9D",
+      "path": "/eight-queens",
+      "skills": ["Logic", "Spatial Reasoning", "Problem Solving"]
+    },
+    {
+      "id": 2,
+      "title": "Memory Master",
+      "difficulty": "Easy",
+      "description": "Test your memory by matching patterns and sequences. Train your brain with progressive levels.",
+      "icon": "🧠",
+      "timeLimit": 120,
+      "minScore": 0,
+      "maxScore": 500,
+      "color": "#00D9FF",
+      "path": "/memory-master",
+      "skills": ["Memory", "Focus", "Pattern Recognition"]
+    },
+    {
+      "id": 3,
+      "title": "Tower of Hanoi",
+      "difficulty": "Medium",
+      "description": "Move all discs from one peg to another following the rules. A recursive puzzle classic.",
+      "icon": "🗼",
+      "timeLimit": 300,
+      "minScore": 0,
+      "maxScore": 800,
+      "color": "#FFD60A",
+      "path": "/tower-of-hanoi",
+      "skills": ["Recursion", "Strategy", "Planning"]
+    },
+    {
+      "id": 4,
+      "title": "Wordle",
+      "difficulty": "Hard",
+      "description": "Guess the 5-letter word in 6 attempts. Get feedback on letter positions and colors.",
+      "icon": "📝",
+      "timeLimit": 300,
+      "minScore": 0,
+      "maxScore": 1200,
+      "color": "#FD6B9E",
+      "path": "/wordle",
+      "skills": ["Vocabulary", "Deduction", "Logic"]
+    },
+    {
+      "id": 5,
+      "title": "Mastermind",
+      "difficulty": "Very Hard",
+      "description": "Decipher the secret code using logical deduction. More attempts = lower score.",
+      "icon": "🔐",
+      "timeLimit": 600,
+      "minScore": 0,
+      "maxScore": 1500,
+      "color": "#A8DADC",
+      "path": "/mastermind",
+      "skills": ["Deduction", "Logic", "Code Breaking"]
+    }
+  ]
+}

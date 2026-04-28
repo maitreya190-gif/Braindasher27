@@ -1,0 +1,14 @@
+.game-room {
+    position: relative;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}

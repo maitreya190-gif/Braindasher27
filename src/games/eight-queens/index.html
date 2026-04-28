@@ -1,0 +1,30 @@
+<!-- Eight Queens Game UI -->
+<div id="eight-queens-container" class="game-container">
+    <div class="game-header">
+        <h2>Eight Queens</h2>
+        <p class="difficulty-medium">Medium Difficulty</p>
+    </div>
+
+    <div class="game-content">
+        <div class="board-wrapper">
+            <div id="chessboard" class="chessboard"></div>
+        </div>
+
+        <div class="game-stats">
+            <div class="stat-item">
+                <span class="stat-label">Queens Placed:</span>
+                <span id="queens-count" class="stat-value">0/8</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Moves:</span>
+                <span id="moves-count" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <div class="game-controls">
+            <button id="reset-btn" class="btn btn-primary">Reset</button>
+            <button id="hint-btn" class="btn btn-accent">Get Hint</button>
+            <button id="solve-btn" class="btn btn-secondary">Submit Solution</button>
+        </div>
+    </div>
+</div>
