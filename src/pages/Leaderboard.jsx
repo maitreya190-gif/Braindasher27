@@ -72,7 +72,7 @@ function Leaderboard() {
                     <td className="games-count">{e.gamesCompleted} / 15</td>
                     <td className="score">{(e.totalScore || 0).toLocaleString()}</td>
                     <td className="time">{formatTime(e.totalTimeSeconds)}</td>
-                    <td className="date">{new Date(e.date).toLocaleDateString()}</td>
+                    <td className="date">{new Date(e.submittedAt).toLocaleDateString()}</td>
                   </tr>
                 ))}
               </tbody>
