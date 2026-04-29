@@ -6,7 +6,7 @@ export class EightQueensGame {
         this.board = Array(boardSize).fill(null).map(() => Array(boardSize).fill(false));
         this.queens = [];
         this.moves = 0;
-        this.startTime = null;
+        this.startTime = Date.now();
     }
 
     placeQueen(row, col) {

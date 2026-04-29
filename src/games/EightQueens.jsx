@@ -1,52 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Modal from '../components/Modal';
-import { EightQueensGame } from '../games/eight-queens/game';
+import { EightQueensGame as EightQueensLogic } from '../games/eight-queens/game';
 import './EightQueens.css';
 
-function EightQueensGame({ onGameEnd, timeLimit }) {
-  const [game, setGame] = useState(new EightQueensGame());
-  const [selectedCell, setSelectedCell] = useState(null);
-  const [moves, setMoves] = useState(0);
-  const [queensPlaced, setQueensPlaced] = useState(0);
-  const [showSolution, setShowSolution] = useState(false);
+function EightQueensGame({ onGameEnd, boardSize = 8 }) {
+  const gameRef = useRef(new EightQueensLogic(boardSize));
+  const [, setTick] = useState(0);
+  const [showHelp, setShowHelp] = useState(false);
   const [won, setWon] = useState(false);
+  const endedRef = useRef(false);
+
+  const game = gameRef.current;
+  const forceUpdate = () => setTick(t => t + 1);
 
   const handleCellClick = (row, col) => {
-    const newGame = { ...game };
+    if (won) return;
     if (game.board[row][col]) {
-      newGame.removeQueen(row, col);
+      game.removeQueen(row, col);
     } else if (game.isValid(row, col)) {
-      newGame.placeQueen(row, col);
+      game.placeQueen(row, col);
     }
-    setGame(newGame);
-    setMoves(newGame.moves);
-    setQueensPlaced(newGame.queens.length);
+    forceUpdate();
 
-    if (newGame.isSolved()) {
+    if (game.isSolved()) {
       setWon(true);
-      setTimeout(() => {
-        const score = newGame.calculateScore();
-        onGameEnd(score);
-      }, 1000);
     }
   };
 
   const handleReset = () => {
-    const newGame = new EightQueensGame();
-    setGame(newGame);
-    setMoves(0);
-    setQueensPlaced(0);
-    setSelectedCell(null);
+    gameRef.current = new EightQueensLogic(boardSize);
+    setWon(false);
+    endedRef.current = false;
+    forceUpdate();
   };
 
-  const getCellColor = (row, col) => {
-    return (row + col) % 2 === 0 ? 'light' : 'dark';
+  const handleContinue = () => {
+    if (!endedRef.current) {
+      endedRef.current = true;
+      onGameEnd(game.calculateScore(), true);
+    }
   };
+
+  const getCellColor = (row, col) => (row + col) % 2 === 0 ? 'light' : 'dark';
 
   const isAttackZone = (row, col) => {
     if (game.board[row][col]) return false;
-    for (let queen of game.queens) {
+    for (const queen of game.queens) {
       if (queen.row === row || queen.col === col) return true;
       if (Math.abs(queen.row - row) === Math.abs(queen.col - col)) return true;
     }
@@ -56,14 +56,12 @@ function EightQueensGame({ onGameEnd, timeLimit }) {
   return (
     <div className="eight-queens-container">
       <div className="container">
-        <div className="game-header">
-          <h2>👑 Eight Queens</h2>
-          <p>Place 8 queens without any attacks</p>
-        </div>
-
         <div className="game-layout">
           <div className="board-section">
-            <div className="chessboard">
+            <div
+              className="chessboard"
+              style={{ gridTemplateColumns: `repeat(${game.boardSize}, 60px)` }}
+            >
               {game.board.map((row, rowIdx) =>
                 row.map((cell, colIdx) => (
                   <div
@@ -81,46 +79,37 @@ function EightQueensGame({ onGameEnd, timeLimit }) {
           </div>
 
           <div className="stats-section">
-            <ScoreDisplay score={queensPlaced} label="Queens Placed" />
+            <ScoreDisplay score={`${game.queens.length}/${game.boardSize}`} label="Queens Placed" />
             <div className="stat-box">
               <span className="stat-label">Moves</span>
-              <span className="stat-value">{moves}</span>
+              <span className="stat-value">{game.moves}</span>
             </div>
-            <div className="stat-box">
-              <span className="stat-label">Time Limit</span>
-              <span className="stat-value">{timeLimit}s</span>
-            </div>
-
             <div className="controls">
-              <button className="btn btn-primary" onClick={handleReset}>
-                Reset
-              </button>
-              <button className="btn btn-accent" onClick={() => setShowSolution(true)}>
-                Help
-              </button>
+              <button className="btn btn-primary" onClick={handleReset}>Reset</button>
+              <button className="btn btn-accent" onClick={() => setShowHelp(true)}>Hint</button>
             </div>
           </div>
         </div>
 
-        <Modal 
-          isOpen={showSolution}
-          title="Need Help?"
-          onClose={() => setShowSolution(false)}
-          actions={<button className="btn btn-secondary" onClick={() => setShowSolution(false)}>Close</button>}
+        <Modal
+          isOpen={showHelp}
+          title="Hint"
+          onClose={() => setShowHelp(false)}
+          actions={<button className="btn btn-secondary" onClick={() => setShowHelp(false)}>Close</button>}
         >
-          <p>Remember: Queens attack horizontally, vertically, and diagonally. Place each queen so no two queens can attack each other.</p>
-          <p style={{marginTop: '15px', color: '#FFD60A'}}>💡 Try placing queens one by one, checking that each new queen is safe.</p>
+          <p>Queens attack along rows, columns, and diagonals. Red cells show attack zones. Place each queen safely, one per row.</p>
+          <p style={{ marginTop: '12px', color: '#FFD60A' }}>💡 Start from a corner and work inward.</p>
         </Modal>
 
         {won && (
-          <Modal 
+          <Modal
             isOpen={won}
-            title="🎉 Victory!"
+            title="🎉 Solved!"
             onClose={() => {}}
-            actions={<button className="btn btn-primary" onClick={() => onGameEnd(game.calculateScore())}>Continue</button>}
+            actions={<button className="btn btn-primary" onClick={handleContinue}>Continue →</button>}
           >
-            <p>Congratulations! You solved the Eight Queens puzzle!</p>
-            <p style={{marginTop: '15px'}}>Score: <strong>{game.calculateScore()}</strong></p>
+            <p>All queens placed safely!</p>
+            <p style={{ marginTop: '12px' }}>Score: <strong>{game.calculateScore()}</strong></p>
           </Modal>
         )}
       </div>

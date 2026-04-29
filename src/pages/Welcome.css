@@ -1,0 +1,223 @@
+/* ── Welcome / Entry Page ────────────────────────────────────── */
+.welcome-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient gold radial — very subtle, not neon */
+.welcome-glow {
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Auth Card ─────────────────────────────────────────────── */
+.welcome-card {
+  background: var(--surface);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 52px 48px;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Thin gold top bar */
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 12%; right: 12%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+/* ── Brand / Logo ──────────────────────────────────────────── */
+.welcome-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.logo-icon { font-size: 2.4rem; line-height: 1; }
+
+.logo-text { display: flex; flex-direction: column; }
+
+.logo-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.logo-sub {
+  font-size: 0.72rem;
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+/* ── Info bullets ──────────────────────────────────────────── */
+.welcome-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-border), transparent);
+  margin: 0 0 24px;
+}
+
+.welcome-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding: 16px;
+  background: rgba(212,175,55,0.04);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-sm);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.info-icon { font-size: 0.95rem; flex-shrink: 0; margin-top: 1px; }
+
+/* ── Form ──────────────────────────────────────────────────── */
+.welcome-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(10,10,10,0.8);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+}
+
+.form-input.input-error { border-color: var(--error); }
+.form-input.input-error:focus { box-shadow: 0 0 0 3px rgba(239,68,68,0.12); }
+
+.form-error {
+  font-size: 0.8rem;
+  color: var(--error);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ── Start Button ──────────────────────────────────────────── */
+.btn-start {
+  width: 100%;
+  padding: 15px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-sm);
+  background: rgba(212,175,55,0.12);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  margin-top: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-start:hover:not(:disabled) {
+  background: rgba(212,175,55,0.2);
+  box-shadow: 0 0 28px rgba(212,175,55,0.3);
+  transform: translateY(-2px);
+}
+
+.btn-start:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.btn-start:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Leaderboard link ──────────────────────────────────────── */
+.btn-leaderboard-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-leaderboard-link:hover {
+  color: var(--gold-soft);
+  border-color: var(--gold-border);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .welcome-card { padding: 36px 24px; }
+  .logo-title { font-size: 1.3rem; }
+}

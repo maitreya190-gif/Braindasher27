@@ -1,0 +1,188 @@
+.bonus-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.bonus-page.bonus-active {
+  align-items: flex-start;
+  padding-top: 0;
+}
+
+/* ── Intro card ─────────────────────────────────────────────── */
+.bonus-intro-card,
+.bonus-result-card {
+  background: var(--surface);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  box-shadow: var(--shadow-panel);
+  backdrop-filter: blur(14px);
+  animation: fadeIn 0.35s ease forwards;
+}
+
+.bonus-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.bonus-title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.bonus-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: -12px 0 0;
+}
+
+/* ── Rules list ─────────────────────────────────────────────── */
+.bonus-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(212, 175, 55, 0.04);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+}
+
+.bonus-rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.bonus-rule-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* ── Warning ────────────────────────────────────────────────── */
+.bonus-timer-display {
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 8px 0;
+  transition: color 0.3s;
+}
+
+.bonus-warning {
+  font-size: 0.82rem;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  line-height: 1.5;
+}
+
+.bonus-start-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* ── Result card score rows ─────────────────────────────────── */
+.bonus-score-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(212, 175, 55, 0.04);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-sm);
+  padding: 20px 22px;
+}
+
+.bonus-score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.bonus-total-row {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.bonus-score-divider {
+  height: 1px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 4px 0;
+}
+
+.bonus-score-num {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.bonus-score-gold {
+  color: var(--gold);
+}
+
+.bonus-result-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.bonus-result-actions .btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 13px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+  .bonus-intro-card,
+  .bonus-result-card {
+    padding: 32px 20px;
+  }
+}

@@ -1,4 +1,4 @@
-.eight-queens-container {
+﻿.eight-queens-container {
     padding: 40px 0;
 }
 
@@ -30,13 +30,12 @@
 }
 
 .chessboard {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    display: inline-grid;
     gap: 2px;
     background: #000;
     padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.20);
 }
 
 .chessboard-cell {
@@ -61,12 +60,12 @@
 
 .chessboard-cell:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.35);
 }
 
 .chessboard-cell.queen {
-    background: rgba(255, 0, 110, 0.3);
-    box-shadow: inset 0 0 10px rgba(255, 0, 110, 0.6);
+    background: rgba(212, 175, 55, 0.25);
+    box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.50);
 }
 
 .chessboard-cell.attack-zone {
@@ -83,14 +82,15 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-    background: rgba(0, 217, 255, 0.1);
-    border: 1px solid rgba(0, 217, 255, 0.3);
+    background: #f0ede8;
+    border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
 .stat-label {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: #555555;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
@@ -99,7 +99,7 @@
 .stat-value {
     font-size: 1.8rem;
     font-weight: bold;
-    color: var(--accent);
+    color: #111111;
 }
 
 .controls {

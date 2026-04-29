@@ -1,207 +1,185 @@
+/* ── Leaderboard Page ────────────────────────────────────────── */
 .leaderboard-page {
-    padding: 40px 0;
+  min-height: 100vh;
+  padding: 52px 24px;
+  animation: fadeIn 0.4s ease forwards;
 }
 
+/* ── Header ─────────────────────────────────────────────────── */
 .leaderboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .leaderboard-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  color: var(--gold-soft);
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
-.leaderboard-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 30px;
+.leaderboard-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  font-style: italic;
 }
 
-.filter-btn {
-    padding: 10px 20px;
-    border: 2px solid rgba(0, 217, 255, 0.3);
-    background: transparent;
-    color: var(--text-light);
-    border-radius: 20px;
-    cursor: pointer;
-    font-family: var(--font-body);
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+/* ── Status ─────────────────────────────────────────────────── */
+.lb-status {
+  text-align: center;
+  padding: 28px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
 }
 
-.filter-btn:hover {
-    border-color: var(--secondary);
-    color: var(--secondary);
+.lb-error { color: #ef4444; }
+
+/* ── Empty state ────────────────────────────────────────────── */
+.no-scores {
+  text-align: center;
+  padding: 64px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 1px dashed var(--gold-border);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
 }
 
-.filter-btn.active {
-    background: var(--secondary);
-    color: var(--dark-bg);
-    border-color: var(--secondary);
-    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
-}
-
+/* ── Table wrapper ──────────────────────────────────────────── */
 .leaderboard-table-wrapper {
-    overflow-x: auto;
-    background: rgba(26, 31, 58, 0.6);
-    border: 1px solid rgba(0, 217, 255, 0.2);
-    border-radius: 12px;
-    padding: 20px;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gold-border);
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-panel);
 }
 
+/* ── Table ──────────────────────────────────────────────────── */
 .leaderboard-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
 }
 
-.leaderboard-table thead {
-    border-bottom: 2px solid var(--secondary);
+.leaderboard-table thead tr {
+  border-bottom: 1px solid var(--gold-border);
 }
 
-.leaderboard-table thead th {
-    padding: 16px;
-    text-align: left;
-    color: var(--secondary);
-    font-family: var(--font-heading);
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    font-weight: bold;
+.leaderboard-table th {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--gold);
+  background: rgba(212,175,55,0.04);
+  white-space: nowrap;
 }
 
-.leaderboard-table tbody td {
-    padding: 16px;
-    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+.leaderboard-table td {
+  padding: 13px 18px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.15s;
 }
 
-.leaderboard-table tbody tr {
-    transition: all 0.3s ease;
-}
+.leaderboard-table tbody tr:hover td { background: rgba(212,175,55,0.035); }
+.leaderboard-table tr:last-child td  { border-bottom: none; }
 
-.leaderboard-table tbody tr:hover {
-    background: rgba(0, 217, 255, 0.05);
-    transform: translateX(4px);
-}
+/* ── Top-3 accent borders ───────────────────────────────────── */
+.rank-1 td { color: var(--text-primary); }
+.rank-2 td { color: var(--text-primary); opacity: 0.88; }
+.rank-3 td { color: var(--text-primary); opacity: 0.78; }
+.rank-1 { border-left: 2px solid var(--gold); }
+.rank-2 { border-left: 2px solid #c0c0c0; }
+.rank-3 { border-left: 2px solid #cd7f32; }
 
-.leaderboard-table tbody tr.rank-1 {
-    background: rgba(255, 215, 0, 0.05);
-}
-
-.leaderboard-table tbody tr.rank-2 {
-    background: rgba(192, 192, 192, 0.03);
-}
-
-.leaderboard-table tbody tr.rank-3 {
-    background: rgba(205, 127, 50, 0.03);
-}
-
-.rank {
-    font-weight: bold;
-    color: var(--accent);
-    font-size: 1.1rem;
-}
+/* ── Column specifics ───────────────────────────────────────── */
+.rank { width: 56px; text-align: center; }
 
 .medal {
-    font-size: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
 }
+
+.rank-1 .medal { background: rgba(212,175,55,0.15); color: var(--gold);    border: 1px solid rgba(212,175,55,0.4); }
+.rank-2 .medal { background: rgba(192,192,192,0.1); color: #d1d5db;         border: 1px solid rgba(192,192,192,0.3); }
+.rank-3 .medal { background: rgba(205,127,50,0.1);  color: #cd7f32;         border: 1px solid rgba(205,127,50,0.3); }
 
 .player-name {
-    color: var(--secondary);
-    font-weight: bold;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
 }
 
-.game-name {
-    color: var(--text-light);
-}
-
-.difficulty {
-    display: inline-block;
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.difficulty.easy {
-    background: rgba(16, 185, 129, 0.2);
-    color: #10B981;
-    border: 1px solid #10B981;
-}
-
-.difficulty.medium {
-    background: rgba(245, 158, 11, 0.2);
-    color: #F59E0B;
-    border: 1px solid #F59E0B;
-}
-
-.difficulty.hard {
-    background: rgba(239, 68, 68, 0.2);
-    color: #EF4444;
-    border: 1px solid #EF4444;
-}
-
-.difficulty.veryhard {
-    background: rgba(168, 85, 247, 0.2);
-    color: #A855F7;
-    border: 1px solid #A855F7;
+.games-count {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #22c55e;
 }
 
 .score {
-    color: var(--accent);
-    font-weight: bold;
-    font-size: 1.1rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--gold);
 }
 
 .time {
-    color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
 }
 
-.date {
-    color: var(--text-muted);
-    font-size: 0.9rem;
+.date { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Legacy filter buttons (kept for compat) */
+.leaderboard-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+
+.filter-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--gold-border);
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: color 0.2s, border-color 0.2s;
 }
 
-.no-scores {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(26, 31, 58, 0.6);
-    border: 2px dashed rgba(0, 217, 255, 0.2);
-    border-radius: 12px;
+.filter-btn:hover, .filter-btn.active {
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
-.no-scores p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
+/* ── Animations ─────────────────────────────────────────────── */
+@keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
 
-@media (max-width: 768px) {
-    .leaderboard-header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .leaderboard-header h1 {
-        font-size: 2rem;
-    }
-
-    .leaderboard-filters {
-        justify-content: center;
-    }
-
-    .leaderboard-table {
-        font-size: 0.85rem;
-    }
-
-    .leaderboard-table thead th,
-    .leaderboard-table tbody td {
-        padding: 12px 8px;
-    }
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .leaderboard-page { padding: 32px 16px; }
+  .leaderboard-table th, .leaderboard-table td { padding: 10px 12px; }
+  .leaderboard-header { flex-direction: column; align-items: flex-start; }
+  .date { display: none; }
 }

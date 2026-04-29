@@ -1,12 +1,12 @@
 /* Mastermind Game */
 
 export class MastermindGame {
-    constructor(codeLength = 4, colors = 6) {
+    constructor(codeLength = 4, colors = 6, maxAttempts = 10) {
         this.codeLength = codeLength;
         this.colors = colors;
+        this.maxAttempts = maxAttempts;
         this.secretCode = this.generateCode();
         this.attempts = [];
-        this.maxAttempts = 10;
         this.gameOver = false;
         this.won = false;
     }
@@ -43,7 +43,6 @@ export class MastermindGame {
         const secretCopy = [...this.secretCode];
         const guessCopy = [...guess];
 
-        // First pass: check correct positions
         for (let i = 0; i < this.codeLength; i++) {
             if (guessCopy[i] === secretCopy[i]) {
                 correctPosition++;
@@ -52,7 +51,6 @@ export class MastermindGame {
             }
         }
 
-        // Second pass: check correct colors in wrong positions
         for (let i = 0; i < this.codeLength; i++) {
             if (guessCopy[i] !== -1) {
                 for (let j = 0; j < this.codeLength; j++) {

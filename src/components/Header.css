@@ -1,6 +1,6 @@
-.header {
-    background: linear-gradient(135deg, rgba(10, 14, 39, 0.95), rgba(15, 27, 63, 0.95));
-    border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+﻿.header {
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.96), rgba(14, 14, 14, 0.96));
+    border-bottom: 2px solid rgba(212, 175, 55, 0.28);
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -58,7 +58,7 @@
 
 .nav-link:hover {
     color: var(--secondary);
-    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.45);
     transform: translateY(-2px);
 }
 
@@ -69,8 +69,8 @@
 }
 
 .player-btn:hover {
-    background: rgba(255, 0, 110, 0.1);
-    box-shadow: 0 0 10px rgba(255, 0, 110, 0.3);
+    background: rgba(212, 175, 55, 0.10);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
 }
 
 .modal-overlay {
@@ -93,7 +93,7 @@
     border-radius: 16px;
     padding: 40px;
     max-width: 400px;
-    box-shadow: 0 0 40px rgba(0, 217, 255, 0.3);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.28);
 }
 
 .modal h3 {
@@ -120,7 +120,7 @@
 .modal input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.28);
 }
 
 .modal-buttons {

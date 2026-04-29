@@ -1,24 +1,47 @@
 /* Wordle Game */
 
 export class WordleGame {
-    constructor(wordList = []) {
-        this.wordList = wordList.length > 0 ? wordList : this.getDefaultWordList();
+    constructor(maxAttempts = 6, wordDifficulty = 'medium') {
+        this.maxAttempts = maxAttempts;
+        this.wordDifficulty = wordDifficulty;
+        this.wordList = this.getWordList(wordDifficulty);
         this.secretWord = this.selectRandomWord();
         this.guesses = [];
-        this.maxAttempts = 6;
         this.gameOver = false;
         this.won = false;
     }
 
-    getDefaultWordList() {
-        return [
-            'BRAIN', 'LOGIC', 'CHESS', 'QUEST', 'SMART',
-            'THINK', 'PUZZLE', 'RIDDLE', 'CODES', 'GAMES',
-            'SOLVE', 'MATCH', 'TOUCH', 'WORLD', 'PLACE',
-            'WORDS', 'ABOUT', 'AFTER', 'APPLE', 'BUILD',
-            'BEGAN', 'CATCH', 'DANCE', 'EARTH', 'FIGHT',
-            'GREAT', 'HAPPY', 'IDEAL', 'JUDGE', 'KNIFE'
-        ];
+    getWordList(difficulty) {
+        const lists = {
+            // Common words, easy to narrow down in 8 attempts
+            easy: [
+                'BRAIN', 'GAMES', 'CHESS', 'SMART', 'THINK',
+                'LIGHT', 'WORLD', 'EARTH', 'HAPPY', 'DANCE',
+                'MATCH', 'PLACE', 'TOUCH', 'APPLE', 'GREAT',
+                'JUDGE', 'KNIFE', 'MONEY', 'NIGHT', 'ROUND',
+                'SMILE', 'SWEET', 'CLEAN', 'SCORE', 'REACH',
+                'BRAVE', 'CLEAR', 'DRIVE', 'GRACE', 'POWER'
+            ],
+            // Well-known words but trickier letter patterns (6 attempts)
+            medium: [
+                'QUIRK', 'STRAY', 'ORBIT', 'GRASP', 'BLOOM',
+                'BLAZE', 'CLASH', 'GROAN', 'STOMP', 'PERCH',
+                'NOVEL', 'IVORY', 'HARSH', 'FROWN', 'EPOCH',
+                'CRAMP', 'BRISK', 'STUNG', 'THICK', 'SWIPE',
+                'QUILL', 'PLUMB', 'MIRTH', 'KNEEL', 'JOUST',
+                'RISKY', 'VOCAL', 'SHRUB', 'CRAVE', 'TRAMP'
+            ],
+            // Common English words but very difficult to guess (5 attempts, unusual patterns)
+            hard: [
+                'CRIMP', 'BRAWN', 'FLINT', 'SCORN', 'SWAMP',
+                'WRATH', 'PRANK', 'BLUNT', 'TRUCE', 'KNELT',
+                'CLASP', 'GRUFF', 'VYING', 'YEARN', 'STOIC',
+                'SKULK', 'WRUNG', 'THYME', 'DWELT', 'SYNTH',
+                'PYGMY', 'NYMPH', 'TRYST', 'LYMPH', 'ZILCH',
+                'GLINT', 'GRIPE', 'CLEFT', 'CRISP', 'KNACK'
+            ]
+        };
+        return lists[difficulty] || lists.medium;
     }
 
     selectRandomWord() {
@@ -48,7 +71,6 @@ export class WordleGame {
         const secretLetters = this.secretWord.split('');
         const guessLetters = guess.split('');
 
-        // First pass: mark correct positions
         for (let i = 0; i < 5; i++) {
             if (guessLetters[i] === secretLetters[i]) {
                 feedback[i] = 'correct';
@@ -57,7 +79,6 @@ export class WordleGame {
             }
         }
 
-        // Second pass: mark present letters in wrong positions
         for (let i = 0; i < 5; i++) {
             if (guessLetters[i] !== null) {
                 const index = secretLetters.indexOf(guessLetters[i]);
@@ -69,10 +90,6 @@ export class WordleGame {
         }
 
         return feedback;
-    }
-
-    isValidWord(word) {
-        return this.wordList.includes(word.toUpperCase());
     }
 
     calculateScore() {

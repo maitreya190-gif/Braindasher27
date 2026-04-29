@@ -1,4 +1,4 @@
-.memory-master-container {
+﻿.memory-master-container {
     padding: 40px 0;
 }
 
@@ -28,7 +28,7 @@
     display: grid;
     gap: 15px;
     padding: 20px;
-    background: rgba(26, 31, 58, 0.6);
+    background: rgba(16, 16, 16, 0.85);
     border-radius: 12px;
 }
 
@@ -66,23 +66,24 @@
 }
 
 .memory-card-front {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--text-light);
-    border-color: var(--secondary);
+    background: rgba(22, 22, 22, 1);
+    border-color: rgba(212, 175, 55, 0.35);
+    color: var(--text-muted);
 }
 
 .memory-card-back {
-    background: rgba(26, 31, 58, 0.8);
-    color: var(--accent);
-    border-color: var(--accent);
+    background: #f0ede8;
+    color: #111111;
+    border-color: rgba(212, 175, 55, 0.5);
+    font-size: 2.2rem;
     transform: rotateY(180deg);
 }
 
 .memory-card.matched .memory-card-front,
 .memory-card.matched .memory-card-back {
-    background: rgba(16, 185, 129, 0.2);
-    border-color: #10B981;
-    opacity: 0.5;
+    background: rgba(16, 16, 16, 0.4);
+    border-color: rgba(16, 185, 129, 0.3);
+    cursor: default;
 }
 
 .stats-section-memory {
@@ -95,14 +96,15 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
-    background: rgba(0, 217, 255, 0.1);
-    border: 1px solid rgba(0, 217, 255, 0.3);
+    background: #f0ede8;
+    border: 1px solid rgba(212, 175, 55, 0.4);
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
 .stat-label {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: #555555;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
@@ -111,7 +113,7 @@
 .stat-value {
     font-size: 1.8rem;
     font-weight: bold;
-    color: var(--accent);
+    color: #111111;
 }
 
 @media (max-width: 768px) {

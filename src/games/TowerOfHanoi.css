@@ -1,0 +1,144 @@
+﻿.hanoi-container {
+    padding: 40px 0;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.game-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.game-header p {
+    font-size: 1rem;
+    color: var(--secondary);
+}
+
+.game-layout-hanoi {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 40px;
+}
+
+.hanoi-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px;
+    background: rgba(16, 16, 16, 0.85);
+    border-radius: 12px;
+    border: 2px solid rgba(212, 175, 55, 0.20);
+}
+
+.peg-container {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.peg {
+    background: rgba(212, 175, 55, 0.05);
+    border: 2px solid rgba(212, 175, 55, 0.28);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.peg.selected {
+    border-color: var(--primary);
+    background: rgba(212, 175, 55, 0.10);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.peg-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.disks-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-end;
+    flex: 1;
+    width: 100%;
+}
+
+.disk {
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    font-weight: bold;
+    font-family: var(--font-heading);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.disk:hover {
+    transform: scale(1.05);
+}
+
+.stats-section-hanoi {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: #f0ede8;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #111111;
+}
+
+.controls-hanoi {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.controls-hanoi .btn {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .game-layout-hanoi {
+        grid-template-columns: 1fr;
+    }
+
+    .hanoi-board {
+        grid-template-columns: 1fr;
+    }
+}

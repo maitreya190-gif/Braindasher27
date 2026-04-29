@@ -1,51 +1,76 @@
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Modal from '../components/Modal';
-import { MemoryMasterGame } from '../games/memory-master/game';
+import { MemoryMasterGame as MemoryLogic } from '../games/memory-master/game';
 import './MemoryMaster.css';
 
-function MemoryMasterGame({ onGameEnd, timeLimit }) {
-  const [game, setGame] = useState(new MemoryMasterGame('easy'));
-  const [score, setScore] = useState(0);
-  const [moves, setMoves] = useState(0);
+function MemoryMasterGame({ onGameEnd, rows = 4, cols = 4 }) {
+  const gameRef = useRef(new MemoryLogic(rows, cols));
+  const [, setTick] = useState(0);
   const [won, setWon] = useState(false);
+  const [locked, setLocked] = useState(false);
+  const endedRef = useRef(false);
+
+  const game = gameRef.current;
+  const forceUpdate = () => setTick(t => t + 1);
 
   const handleCardClick = (index) => {
-    const newGame = { ...game };
-    if (newGame.flipCard(index)) {
-      setMoves(newGame.moves);
-      setScore(newGame.score);
+    if (locked || game.matched[index] || game.flipped[index] || won) return;
 
-      if (newGame.isSolved()) {
-        setWon(true);
-        setTimeout(() => {
-          const finalScore = newGame.calculateScore();
-          onGameEnd(finalScore);
-        }, 1000);
-      }
+    game.flipped[index] = true;
+    game.moves++;
+    forceUpdate();
+
+    const flippedIndices = game.flipped
+      .map((f, i) => (f && !game.matched[i] ? i : -1))
+      .filter(i => i !== -1);
+
+    if (flippedIndices.length === 2) {
+      const [i1, i2] = flippedIndices;
+      setLocked(true);
+
+      setTimeout(() => {
+        if (game.cards[i1] === game.cards[i2]) {
+          game.matched[i1] = true;
+          game.matched[i2] = true;
+          game.score += 10;
+        }
+        game.flipped[i1] = false;
+        game.flipped[i2] = false;
+        setLocked(false);
+        forceUpdate();
+
+        if (game.isSolved()) setWon(true);
+      }, 900);
     }
-    setGame(newGame);
   };
 
   const handleReset = () => {
-    const newGame = new MemoryMasterGame('easy');
-    setGame(newGame);
-    setScore(0);
-    setMoves(0);
+    gameRef.current = new MemoryLogic(rows, cols);
+    setWon(false);
+    setLocked(false);
+    endedRef.current = false;
+    forceUpdate();
   };
 
-  const gridSize = Math.sqrt(game.cards.length);
+  const handleContinue = () => {
+    if (!endedRef.current) {
+      endedRef.current = true;
+      onGameEnd(game.calculateScore(), true);
+    }
+  };
+
+  const totalPairs = game.cards.length / 2;
+  const matchedPairs = game.matched.filter(m => m).length / 2;
 
   return (
     <div className="memory-master-container">
       <div className="container">
-        <div className="game-header">
-          <h2>🧠 Memory Master</h2>
-          <p>Match all pairs to win</p>
-        </div>
-
         <div className="game-layout-memory">
-          <div className="memory-grid" style={{ gridTemplateColumns: `repeat(${gridSize}, 1fr)` }}>
+          <div
+            className="memory-grid"
+            style={{ gridTemplateColumns: `repeat(${game.cols}, 1fr)` }}
+          >
             {game.cards.map((card, idx) => (
               <div
                 key={idx}
@@ -55,22 +80,18 @@ function MemoryMasterGame({ onGameEnd, timeLimit }) {
                 onClick={() => handleCardClick(idx)}
               >
                 <div className="memory-card-inner">
-                  <div className="memory-card-front">?</div>
-                  <div className="memory-card-back">{String.fromCharCode(65 + game.cards[idx])}</div>
+                  <div className="memory-card-front">{game.matched[idx] ? '' : '?'}</div>
+                  <div className="memory-card-back">{game.matched[idx] ? '' : String.fromCharCode(65 + game.cards[idx])}</div>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="stats-section-memory">
-            <ScoreDisplay score={score} label="Score" />
+            <ScoreDisplay score={`${matchedPairs}/${totalPairs}`} label="Pairs Found" />
             <div className="stat-box">
               <span className="stat-label">Moves</span>
-              <span className="stat-value">{moves}</span>
-            </div>
-            <div className="stat-box">
-              <span className="stat-label">Matched</span>
-              <span className="stat-value">{game.matched.filter(m => m).length}/8</span>
+              <span className="stat-value">{game.moves}</span>
             </div>
             <button className="btn btn-primary" onClick={handleReset} style={{ marginTop: '20px' }}>
               Restart
@@ -79,15 +100,15 @@ function MemoryMasterGame({ onGameEnd, timeLimit }) {
         </div>
 
         {won && (
-          <Modal 
+          <Modal
             isOpen={won}
-            title="🎉 You Won!"
+            title="🎉 All Pairs Found!"
             onClose={() => {}}
-            actions={<button className="btn btn-primary" onClick={() => onGameEnd(score)}>Continue</button>}
+            actions={<button className="btn btn-primary" onClick={handleContinue}>Continue →</button>}
           >
             <p>Excellent memory! All pairs matched!</p>
-            <p style={{marginTop: '15px'}}>Final Score: <strong>{score}</strong></p>
-            <p style={{color: '#FFD60A', marginTop: '10px'}}>Moves Used: {moves}</p>
+            <p style={{ marginTop: '12px' }}>Moves used: <strong>{game.moves}</strong></p>
+            <p style={{ color: '#FFD60A' }}>Score: {game.calculateScore()}</p>
           </Modal>
         )}
       </div>

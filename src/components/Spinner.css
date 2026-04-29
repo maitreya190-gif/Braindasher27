@@ -1,11 +1,11 @@
-@keyframes spin {
+﻿@keyframes spin {
     to {
         transform: rotate(360deg);
     }
 }
 
 .spinner {
-    border: 4px solid rgba(0, 217, 255, 0.2);
+    border: 4px solid rgba(212, 175, 55, 0.20);
     border-top-color: var(--secondary);
     border-radius: 50%;
     width: 40px;

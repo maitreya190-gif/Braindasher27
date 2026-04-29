@@ -1,17 +1,34 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  plugins: [react()],
   server: {
     port: 3000,
     open: true,
-    cors: true
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     outDir: 'dist',
-    minify: 'terser',
-    sourcemap: false
+    minify: 'esbuild',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': ['react', 'react-dom', 'react-router-dom']
+        }
+      }
+    }
   },
   preview: {
     port: 4173
+  },
+  css: {
+    postcss: null
   }
 });

@@ -2,90 +2,77 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Leaderboard.css';
 
-function Leaderboard({ scores }) {
-  const [sortedScores, setSortedScores] = useState([]);
-  const [filter, setFilter] = useState('all');
+function formatTime(seconds) {
+  if (!seconds) return '—';
+  const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+  const s = (seconds % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
+
+function getMedal(rank) {
+  if (rank === 1) return '🥇';
+  if (rank === 2) return '🥈';
+  if (rank === 3) return '🥉';
+  return rank;
+}
+
+function Leaderboard() {
   const navigate = useNavigate();
+  const [entries, setEntries] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
-    let filtered = scores;
-
-    if (filter !== 'all') {
-      filtered = scores.filter(s => s.gameName === filter);
-    }
-
-    const sorted = filtered.sort((a, b) => b.score - a.score);
-    setSortedScores(sorted);
-  }, [scores, filter]);
-
-  const games = ['all', 'Eight Queens', 'Memory Master', 'Tower of Hanoi', 'Wordle', 'Mastermind'];
-
-  const getMedalEmoji = (rank) => {
-    if (rank === 1) return '🥇';
-    if (rank === 2) return '🥈';
-    if (rank === 3) return '🥉';
-    return rank;
-  };
+    fetch('/api/scores/leaderboard')
+      .then(r => r.json())
+      .then(data => { setEntries(data); setLoading(false); })
+      .catch(() => { setError('Could not load leaderboard — is the server running?'); setLoading(false); });
+  }, []);
 
   return (
     <div className="leaderboard-page">
       <div className="container">
         <div className="leaderboard-header">
           <h1>🏆 Leaderboard</h1>
-          <button className="btn btn-primary" onClick={() => navigate('/')}>
-            ← Back to Games
-          </button>
+          <button className="btn btn-primary" onClick={() => navigate('/')}>← Back</button>
         </div>
 
-        <div className="leaderboard-filters">
-          {games.map(game => (
-            <button
-              key={game}
-              className={`filter-btn ${filter === game ? 'active' : ''}`}
-              onClick={() => setFilter(game)}
-            >
-              {game === 'all' ? 'All Games' : game}
-            </button>
-          ))}
-        </div>
+        <p className="leaderboard-note">
+          Ranked by: games completed (↓) · time used (↑) · total score (↓)
+        </p>
 
-        {sortedScores.length === 0 ? (
+        {loading && <p className="lb-status">Loading…</p>}
+        {error   && <p className="lb-status lb-error">{error}</p>}
+
+        {!loading && !error && entries.length === 0 && (
           <div className="no-scores">
-            <p>No scores yet. Play a game to get started!</p>
-            <button className="btn btn-secondary" onClick={() => navigate('/')}>
-              Play Games
-            </button>
+            <p>No results yet — be the first to compete!</p>
+            <button className="btn btn-secondary" onClick={() => navigate('/')}>Start Competition</button>
           </div>
-        ) : (
+        )}
+
+        {entries.length > 0 && (
           <div className="leaderboard-table-wrapper">
             <table className="leaderboard-table">
               <thead>
                 <tr>
                   <th>Rank</th>
-                  <th>Player</th>
-                  <th>Game</th>
-                  <th>Difficulty</th>
+                  <th>PRN</th>
+                  <th>Completed</th>
                   <th>Score</th>
-                  <th>Time</th>
+                  <th>Time Used</th>
                   <th>Date</th>
                 </tr>
               </thead>
               <tbody>
-                {sortedScores.map((entry, idx) => (
-                  <tr key={entry.id} className={idx < 3 ? `rank-${idx + 1}` : ''}>
-                    <td className="rank">
-                      <span className="medal">{getMedalEmoji(idx + 1)}</span>
-                    </td>
-                    <td className="player-name">{entry.playerName}</td>
-                    <td className="game-name">{entry.gameName}</td>
-                    <td>
-                      <span className={`difficulty ${entry.difficulty.toLowerCase().replace(' ', '')}`}>
-                        {entry.difficulty}
-                      </span>
-                    </td>
-                    <td className="score">{entry.score}</td>
-                    <td className="time">{entry.time}s</td>
-                    <td className="date">{entry.date}</td>
+                {entries.map((e, idx) => (
+                  <tr key={e.id} className={idx < 3 ? `rank-${idx + 1}` : ''}>
+                    <td className="rank"><span className="medal">{getMedal(idx + 1)}</span></td>
+                    <td className="player-name">{e.prn}</td>
+                    <td className="games-count">{e.gamesCompleted} / 15</td>
+                    <td className="score">{(e.totalScore || 0).toLocaleString()}</td>
+                    <td className="time">{formatTime(e.totalTimeSeconds)}</td>
+                    <td className="date">{new Date(e.date).toLocaleDateString()}</td>
                   </tr>
                 ))}
               </tbody>
