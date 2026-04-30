@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
 import ScoreDisplay from '../components/ScoreDisplay';
 import Modal from '../components/Modal';
-import { CircleOfHanoiGame } from '../games/circle-of-hanoi/game';
+import { CircleOfHanoiGame as CircleLogic } from '../games/circle-of-hanoi/game';
 import './CircleOfHanoi.css';
 
 function CircleOfHanoiGame({ onGameEnd, discCount = 3 }) {
-  const gameRef = useRef(new CircleOfHanoiGame(discCount, Math.random() * 10000));
+  const gameRef = useRef(new CircleLogic(discCount, Math.random() * 10000));
   const [, setTick] = useState(0);
   const [selectedPeg, setSelectedPeg] = useState(null);
   const [won, setWon] = useState(false);
@@ -40,7 +40,7 @@ function CircleOfHanoiGame({ onGameEnd, discCount = 3 }) {
   };
 
   const handleReset = () => {
-    gameRef.current = new CircleOfHanoiGame(discCount, Math.random() * 10000);
+    gameRef.current = new CircleLogic(discCount, Math.random() * 10000);
     setSelectedPeg(null);
     setWon(false);
     setInvalidMove(false);
