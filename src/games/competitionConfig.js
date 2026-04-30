@@ -191,7 +191,7 @@
   },
   {
     id: 'ms-medium', points: 20, game: 'Mastermind', difficulty: 'Medium', component: 'Mastermind',
-    config: { codeLength: 4, numColors: 6, maxAttempts: 12 },
+    config: { codeLength: 4, numColors: 6, maxAttempts: 10 },
     hint: 'Crack a 4-peg code using 6 colours in 12 attempts.',
     goal: 'Deduce the secret 4-colour code from a palette of 6 colours.',
     rules: [
@@ -206,7 +206,7 @@
   },
   {
     id: 'ms-hard', points: 40, game: 'Mastermind', difficulty: 'Hard', component: 'Mastermind',
-    config: { codeLength: 5, numColors: 8, maxAttempts: 16 },
+    config: { codeLength: 5, numColors: 8, maxAttempts: 12 },
     hint: 'Crack a 5-peg code from 8 colours in 16 attempts.',
     goal: 'Deduce the secret 5-colour code from a palette of 8 colours in only 7 tries.',
     rules: [

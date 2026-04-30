@@ -5,7 +5,7 @@ import { TowerOfHanoiGame as HanoiLogic } from '../games/tower-of-hanoi/game';
 import './TowerOfHanoi.css';
 
 function TowerOfHanoiGame({ onGameEnd, discCount = 3 }) {
-  const gameRef = useRef(new HanoiLogic(discCount));
+  const gameRef = useRef(new HanoiLogic(discCount, Math.random() * 10000));
   const [, setTick] = useState(0);
   const [selectedPeg, setSelectedPeg] = useState(null);
   const [won, setWon] = useState(false);

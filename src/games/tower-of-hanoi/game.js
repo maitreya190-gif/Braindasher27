@@ -1,19 +1,52 @@
 /* Tower of Hanoi Game */
 
 export class TowerOfHanoiGame {
-    constructor(diskCount = 3) {
+    constructor(diskCount = 3, seed = null) {
         this.diskCount = diskCount;
         this.pegs = [[], [], []];
         this.moves = 0;
         this.pegNames = ['A', 'B', 'C'];
         this.moveHistory = [];
+        this.seed = seed || Math.random();
         this.initialize();
     }
 
     initialize() {
-        // Fill peg A with disks (largest at bottom)
-        for (let i = this.diskCount; i >= 1; i--) {
-            this.pegs[0].push(i);
+        // Generate random starting configuration
+        const disks = Array.from({ length: this.diskCount }, (_, i) => this.diskCount - i);
+        this.randomizeDistribution(disks);
+    }
+
+    randomizeDistribution(disks) {
+        // Seed-based random for consistency
+        let rngIndex = 0;
+        const seededRandom = () => {
+            const x = Math.sin(this.seed + rngIndex++) * 10000;
+            return x - Math.floor(x);
+        };
+
+        // Shuffle disks randomly
+        for (let i = disks.length - 1; i > 0; i--) {
+            const j = Math.floor(seededRandom() * (i + 1));
+            [disks[i], disks[j]] = [disks[j], disks[i]];
+        }
+
+        // Distribute randomly across pegs while maintaining Tower of Hanoi constraints
+        const pegCounts = [0, 0, 0];
+        for (let i = 0; i < this.diskCount; i++) {
+            let pegIdx = Math.floor(seededRandom() * 3);
+            pegCounts[pegIdx]++;
+        }
+
+        // Place disks on pegs in descending order (largest at bottom)
+        let diskIdx = 0;
+        for (let pegIdx = 0; pegIdx < 3; pegIdx++) {
+            const disksOnPeg = [];
+            for (let i = 0; i < pegCounts[pegIdx] && diskIdx < disks.length; i++) {
+                disksOnPeg.push(disks[diskIdx++]);
+            }
+            disksOnPeg.sort((a, b) => b - a); // Largest first (bottom)
+            this.pegs[pegIdx] = disksOnPeg;
         }
     }
 
