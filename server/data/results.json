@@ -1,456 +1,66 @@
 [
   {
-    "id": 1777410487371,
-    "prn": "15125267'",
-    "gamesCompleted": 1,
-    "totalScore": 450,
-    "totalTimeSeconds": 91,
+    "id": 1777569049138,
+    "prn": "125B1B108",
+    "gamesCompleted": 12,
+    "totalScore": 341,
+    "totalTimeSeconds": 1974,
     "gameScores": [
       {
         "gameName": "Eight Queens",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Easy",
-        "score": 450,
-        "timeTaken": 64,
-        "completed": true,
-        "skipped": false
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      }
-    ],
-    "submittedAt": "2026-04-28T21:08:07.371Z"
-  },
-  {
-    "id": 1777411612088,
-    "prn": "1233",
-    "gamesCompleted": 0,
-    "totalScore": 0,
-    "totalTimeSeconds": 293,
-    "gameScores": [
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 274,
-        "completed": false,
-        "skipped": false
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      }
-    ],
-    "submittedAt": "2026-04-28T21:26:52.088Z"
-  },
-  {
-    "id": 1777414007197,
-    "prn": "12345677",
-    "gamesCompleted": 0,
-    "totalScore": 0,
-    "totalTimeSeconds": 104,
-    "gameScores": [
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      }
-    ],
-    "submittedAt": "2026-04-28T22:06:47.197Z"
-  },
-  {
-    "id": 1777414326178,
-    "prn": "12345",
-    "gamesCompleted": 1,
-    "totalScore": 955,
-    "totalTimeSeconds": 53,
-    "gameScores": [
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Easy",
-        "score": 955,
-        "timeTaken": 13,
+        "score": 10,
+        "timeTaken": 4,
         "completed": true,
         "skipped": false
       },
       {
         "gameName": "Eight Queens",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 36,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Eight Queens",
         "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 40,
+        "timeTaken": 455,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Memory Master",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 30,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Memory Master",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 80,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Memory Master",
         "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 40,
+        "timeTaken": 158,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 136,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
@@ -471,76 +81,76 @@
       {
         "gameName": "Wordle",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 182,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Wordle",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 83,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Wordle",
         "difficulty": "Hard",
         "score": 0,
-        "timeTaken": 0,
+        "timeTaken": 307,
         "completed": false,
-        "skipped": true
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 58,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 67,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
         "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 40,
+        "timeTaken": 133,
+        "completed": true,
+        "skipped": false
       }
     ],
-    "submittedAt": "2026-04-28T22:12:06.178Z"
+    "submittedAt": "2026-04-30T17:10:49.138Z"
   },
   {
-    "id": 1777415353060,
-    "prn": "123456",
-    "gamesCompleted": 0,
-    "totalScore": 0,
-    "totalTimeSeconds": 60,
+    "id": 1777566892507,
+    "prn": "125B1B139",
+    "gamesCompleted": 12,
+    "totalScore": 285,
+    "totalTimeSeconds": 1722,
     "gameScores": [
       {
         "gameName": "Eight Queens",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 24,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Eight Queens",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 83,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Eight Queens",
@@ -553,18 +163,18 @@
       {
         "gameName": "Memory Master",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 55,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Memory Master",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 97,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Memory Master",
@@ -577,66 +187,66 @@
       {
         "gameName": "Tower of Hanoi",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 83,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 139,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
         "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 40,
+        "timeTaken": 212,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Wordle",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 132,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Wordle",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 60,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Wordle",
         "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 40,
+        "timeTaken": 118,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 147,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 184,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
@@ -647,78 +257,78 @@
         "skipped": true
       }
     ],
-    "submittedAt": "2026-04-28T22:29:13.060Z"
+    "submittedAt": "2026-04-30T16:34:52.507Z"
   },
   {
-    "id": 1777416487719,
-    "prn": "123456",
-    "gamesCompleted": 0,
-    "totalScore": 0,
-    "totalTimeSeconds": 60,
+    "id": 1777466193054,
+    "prn": "125B1B024",
+    "gamesCompleted": 11,
+    "totalScore": 276,
+    "totalTimeSeconds": 2141,
     "gameScores": [
       {
         "gameName": "Eight Queens",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 19,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Eight Queens",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 19,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Eight Queens",
         "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 40,
+        "timeTaken": 135,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Memory Master",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 47,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Memory Master",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 77,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Memory Master",
         "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 40,
+        "timeTaken": 171,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 178,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 255,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
@@ -731,42 +341,42 @@
       {
         "gameName": "Wordle",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 41,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Wordle",
         "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 20,
+        "timeTaken": 75,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Wordle",
         "difficulty": "Hard",
         "score": 0,
-        "timeTaken": 0,
+        "timeTaken": 453,
         "completed": false,
-        "skipped": true
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 65,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
         "difficulty": "Medium",
         "score": 0,
-        "timeTaken": 0,
+        "timeTaken": 258,
         "completed": false,
-        "skipped": true
+        "skipped": false
       },
       {
         "gameName": "Mastermind",
@@ -777,22 +387,22 @@
         "skipped": true
       }
     ],
-    "submittedAt": "2026-04-28T22:48:07.719Z"
+    "submittedAt": "2026-04-29T12:36:33.054Z"
   },
   {
-    "id": 1777416493720,
-    "prn": "123456",
-    "gamesCompleted": 0,
-    "totalScore": 0,
-    "totalTimeSeconds": 60,
+    "id": 1777461330029,
+    "prn": "125B1B108",
+    "gamesCompleted": 2,
+    "totalScore": 30,
+    "totalTimeSeconds": 380,
     "gameScores": [
       {
         "gameName": "Eight Queens",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 11,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Eight Queens",
@@ -837,10 +447,10 @@
       {
         "gameName": "Tower of Hanoi",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 20,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
@@ -907,22 +517,22 @@
         "skipped": true
       }
     ],
-    "submittedAt": "2026-04-28T22:48:13.720Z"
+    "submittedAt": "2026-04-29T11:15:30.029Z"
   },
   {
-    "id": 1777417454940,
-    "prn": "12345678789",
-    "gamesCompleted": 0,
-    "totalScore": 78,
-    "totalTimeSeconds": 11,
+    "id": 1777445369037,
+    "prn": "125B1B108",
+    "gamesCompleted": 2,
+    "totalScore": 26,
+    "totalTimeSeconds": 410,
     "gameScores": [
       {
         "gameName": "Eight Queens",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 16,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Eight Queens",
@@ -967,10 +577,10 @@
       {
         "gameName": "Tower of Hanoi",
         "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
+        "score": 10,
+        "timeTaken": 115,
+        "completed": true,
+        "skipped": false
       },
       {
         "gameName": "Tower of Hanoi",
@@ -1037,396 +647,6 @@
         "skipped": true
       }
     ],
-    "submittedAt": "2026-04-28T23:04:14.940Z"
-  },
-  {
-    "id": 1777435284833,
-    "prn": "1234567890-",
-    "gamesCompleted": 0,
-    "totalScore": 105,
-    "totalTimeSeconds": 3,
-    "gameScores": [
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      }
-    ],
-    "submittedAt": "2026-04-29T04:01:24.833Z"
-  },
-  {
-    "id": 1777436325211,
-    "prn": "298374657",
-    "gamesCompleted": 0,
-    "totalScore": 21,
-    "totalTimeSeconds": 99,
-    "gameScores": [
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      }
-    ],
-    "submittedAt": "2026-04-29T04:18:45.211Z"
-  },
-  {
-    "id": 1777442729654,
-    "prn": "1234567890-=",
-    "gamesCompleted": 0,
-    "totalScore": 78,
-    "totalTimeSeconds": 4,
-    "gameScores": [
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Eight Queens",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Memory Master",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Tower of Hanoi",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Wordle",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Easy",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Medium",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      },
-      {
-        "gameName": "Mastermind",
-        "difficulty": "Hard",
-        "score": 0,
-        "timeTaken": 0,
-        "completed": false,
-        "skipped": true
-      }
-    ],
-    "submittedAt": "2026-04-29T06:05:29.654Z"
+    "submittedAt": "2026-04-29T06:49:29.037Z"
   }
 ]
