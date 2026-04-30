@@ -38,7 +38,7 @@ function Leaderboard() {
         </div>
 
         <p className="leaderboard-note">
-          Ranked by: games completed (↓) · time used (↑) · total score (↓)
+          Ranked by: total score (↓)
         </p>
 
         {loading && <p className="lb-status">Loading…</p>}

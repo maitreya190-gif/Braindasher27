@@ -34,11 +34,7 @@ const db = {
 
   getLeaderboard() {
     return loadResults()
-      .sort((a, b) => {
-        if (b.gamesCompleted !== a.gamesCompleted) return b.gamesCompleted - a.gamesCompleted;
-        if (a.totalTimeSeconds !== b.totalTimeSeconds) return a.totalTimeSeconds - b.totalTimeSeconds;
-        return b.totalScore - a.totalScore;
-      })
+      .sort((a, b) => b.totalScore - a.totalScore)
       .slice(0, 50);
   },
 };
