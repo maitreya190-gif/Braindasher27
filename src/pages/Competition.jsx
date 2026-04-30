@@ -4,7 +4,7 @@ import { useCompetition } from '../context/CompetitionContext';
 import { COMPETITION_GAMES, TOTAL_COMPETITION_TIME } from '../games/competitionConfig';
 import EightQueensGame from '../games/EightQueens';
 import MemoryMasterGame from '../games/MemoryMaster';
-import TowerOfHanoiGame from '../games/TowerOfHanoi';
+import CircleOfHanoiGame from '../games/CircleOfHanoi';
 import WordleGame from '../games/Wordle';
 import MastermindGame from '../games/Mastermind';
 import './Competition.css';
@@ -164,7 +164,7 @@ function Competition() {
     switch (component) {
       case 'EightQueens':  return <EightQueensGame  {...props} boardSize={config.boardSize} />;
       case 'MemoryMaster': return <MemoryMasterGame {...props} rows={config.rows} cols={config.cols} />;
-      case 'TowerOfHanoi': return <TowerOfHanoiGame {...props} discCount={config.discCount} />;
+      case 'CircleOfHanoi': return <CircleOfHanoiGame {...props} discCount={config.discCount} />;
       case 'Wordle':       return <WordleGame       {...props} maxAttempts={config.maxAttempts} wordDifficulty={config.wordDifficulty} />;
       case 'Mastermind':   return <MastermindGame   {...props} codeLength={config.codeLength} numColors={config.numColors} maxAttempts={config.maxAttempts} />;
       default: return null;

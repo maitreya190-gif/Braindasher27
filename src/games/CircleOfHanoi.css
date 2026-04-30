@@ -1,0 +1,190 @@
+.circle-hanoi-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.circle-hanoi-layout {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Circular board */
+.circle-board {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-guide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.peg-node {
+  position: absolute;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.peg-node:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.peg-node.selected {
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
+  transform: scale(1.15);
+}
+
+.peg-node.invalid {
+  animation: shake 0.3s;
+  filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.5));
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.peg-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: rgba(212, 175, 55, 0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  min-width: 30px;
+  text-align: center;
+}
+
+.disks-stack-circle {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2px;
+  min-height: 40px;
+  justify-content: flex-end;
+}
+
+.disk-circle {
+  height: 28px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s;
+}
+
+.disk-circle:hover {
+  transform: scale(1.05);
+}
+
+.peg-base {
+  width: 6px;
+  height: 20px;
+  background: linear-gradient(90deg, #888, #555);
+  border-radius: 1px;
+  opacity: 0.6;
+}
+
+/* Stats section */
+.stats-section-circle {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 180px;
+}
+
+.stat-box {
+  background: #f0ede8;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 8px;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  font-family: var(--font-mono);
+}
+
+.controls-circle {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controls-circle .btn {
+  flex: 1;
+  min-width: 100px;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .circle-hanoi-layout {
+    gap: 40px;
+    flex-direction: column;
+  }
+
+  .circle-board {
+    width: 280px;
+    height: 280px;
+  }
+
+  .peg-node {
+    width: 70px;
+    gap: 6px;
+  }
+
+  .peg-name {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+  }
+
+  .disks-stack-circle {
+    min-height: 30px;
+  }
+
+  .disk-circle {
+    height: 22px;
+    font-size: 0.8rem;
+  }
+}
